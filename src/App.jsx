@@ -6,9 +6,7 @@ import Agents from "./pages/Agents";
 function App() {
   return (<>
   
-      <Link to={"/"}>Home</Link>
-      <Link to={"/Agents"}>Agents</Link>
-      <Link to={"/projects"}>project</Link>
+  
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/Agents" element={<Agents />} />
