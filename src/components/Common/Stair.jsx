@@ -36,9 +36,9 @@ const Stair = ({ children }) => {
       y: "0%",
     });
     gsap.from(pageRef.current, {
-        opacity:0,
-        delay:1.2,
-        scale:1.2
+      opacity: 0,
+      delay: 1,
+      // scale: 1.2,
     });
   }, [location]);
   return (

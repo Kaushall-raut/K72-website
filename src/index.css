@@ -14,3 +14,7 @@ body {
   background-color: #111;
   overflow-x: hidden;
 }
+
+.agent-page-div {
+  /* inset : 150px -850px 0px 150px; */
+}
