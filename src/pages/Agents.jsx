@@ -59,7 +59,7 @@ const Agents = () => {
             imageIndex = imageArray.length - 1;
           }
 
-          console.log(imageIndex);
+          // console.log(imageIndex);
 
           imageRef.current.src = imageArray[imageIndex];
         },
