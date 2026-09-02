@@ -4,13 +4,16 @@ import "./index.css";
 import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import Stair from "./components/Common/Stair.jsx";
+import NavContext from "./context/Navcontext.jsx";
+
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <BrowserRouter>
       <Stair>
-        
-      <App />
+        <NavContext>
+          <App />
+        </NavContext>
       </Stair>
     </BrowserRouter>
   </StrictMode>,
