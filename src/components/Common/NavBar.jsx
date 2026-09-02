@@ -31,7 +31,10 @@ const NavBar = () => {
           ref={navGreenRef}
           className=" bg-[#D3FD50]  transition-all delay-100 h-0 w-full absolute top-0"
         ></div>
-        <div className="relative h-full w-full "></div>
+        <div className="relative h-full px-12 flex flex-col justify-center items-end gap-2 ">
+          <div className="h-0.5 w-16 bg-white"></div>
+          <div className="h-0.5 w-8 bg-white"></div>
+        </div>
       </div>
     </div>
   );
