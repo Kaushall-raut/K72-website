@@ -15,4 +15,26 @@ body {
   overflow-x: hidden;
 }
 
+.moveLink{
+  opacity: 0;
+  transition: all ease 0.3s;
+}
+.link:hover .moveLink{
+  opacity: 1;
+}
 
+.moveX{
+  animation: moveAnimation;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes moveAnimation{
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-100%);
+  }
+}
