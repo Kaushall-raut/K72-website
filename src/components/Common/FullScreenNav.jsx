@@ -1,9 +1,12 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { NavBarContext } from "../../context/Navcontext";
 
 const FullScreenNav = () => {
   const fullNavLinkRef = useRef(null);
+  const fullScreenRef = useRef(null);
+  const { navOpen } = useContext(NavBarContext);
 
   useGSAP(() => {
     const tl = gsap.timeline();
@@ -27,9 +30,21 @@ const FullScreenNav = () => {
         amount: 0.25,
       },
     });
-  });
+    tl.pause();
+
+    if (navOpen) {
+      fullScreenRef.current.style.display = "block";
+      tl.play();
+    } else {
+      fullScreenRef.current.style.display = "none";
+      tl.reverse();
+    }
+  }, [navOpen]);
   return (
-    <div className=" hidden h-screen text-white w-full   bg-black">
+    <div
+      ref={fullScreenRef}
+      className=" hidden h-screen text-white w-full z-50  bg-black"
+    >
       <div className="h-screen w-full fixed">
         <div className="h-full w-full   flex   ">
           <div className="RingStair bg-black h-full w-1/5 "> </div>
