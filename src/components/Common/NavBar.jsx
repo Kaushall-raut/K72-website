@@ -3,8 +3,10 @@ import { NavBarContext } from "../../context/Navcontext";
 
 const NavBar = () => {
   const navGreenRef = useRef(null);
+  
   const [navOpen, setNavOpen] = useContext(NavBarContext);
-  console.log(navOpen);
+
+
   
   return (
     <div className="flex fixed top-0 w-full items-start justify-between z-4">
@@ -36,9 +38,9 @@ const NavBar = () => {
       >
         <div
           ref={navGreenRef}
-          className=" bg-[#D3FD50]  transition-all delay-100 h-0 w-full absolute top-0"
+          className={`bg-[#D3FD50]  transition-all delay-100 h-0 w-full absolute top-0 ${navOpen ?'hidden':''}`}
         ></div>
-        <div className="relative h-full px-12 flex flex-col justify-center items-end gap-2 ">
+        <div  className={`relative h-full px-12 flex flex-col justify-center items-end  gap-2 ${navOpen ?'hidden':''}`}>
           <div className="h-0.5 w-16 bg-white"></div>
           <div className="h-0.5 w-8 bg-white"></div>
         </div>

@@ -6,7 +6,7 @@ import { NavBarContext } from "../../context/Navcontext";
 const FullScreenNav = () => {
   const fullNavLinkRef = useRef(null);
   const fullScreenRef = useRef(null);
-  const { navOpen,setNavOpen } = useContext(NavBarContext);
+  const [navOpen, setNavOpen] = useContext(NavBarContext);
 
   function gsapAnimation() {
     const tl = gsap.timeline();
@@ -54,6 +54,7 @@ const FullScreenNav = () => {
       delay: 1.2,
     });
   }
+  
 
   useGSAP(
     function () {
@@ -61,8 +62,9 @@ const FullScreenNav = () => {
         gsap.to(".fullscreennav", {
           display: "block",
         });
-        console.log(navOpen,"from full");
         
+        // navGreenRef.current.style.display="hidden"
+
         gsapAnimation();
       } else {
         gsapAnimationReverse();
@@ -74,7 +76,7 @@ const FullScreenNav = () => {
     <div
       ref={fullScreenRef}
       id="fullscreennav"
-      className="fullscreennav hidden h-screen text-white w-full  bg-black"
+      className="fullscreennav hidden  h-screen text-white w-full  bg-black"
     >
       <div className="h-screen w-full fixed">
         <div className="h-full w-full   flex   ">
@@ -101,8 +103,11 @@ const FullScreenNav = () => {
               ></path>
             </svg>
           </div>
-          <div onClick={()=>setNavOpen(false)} className="h-full w-32 relative  cursor-pointer p-4">
-            <div  className="bg-[#D3FD50] h-32 w-1 absolute -rotate-45 origin-top"></div>
+          <div
+            onClick={() => setNavOpen(false)}
+            className="h-full w-32 relative  z-20 cursor-pointer p-4"
+          >
+            <div className="bg-[#D3FD50] h-32 w-1 absolute -rotate-45 origin-top"></div>
             <div className="bg-[#D3FD50] h-32 w-1 right-3 absolute rotate-45 origin-top"></div>
           </div>
         </div>
