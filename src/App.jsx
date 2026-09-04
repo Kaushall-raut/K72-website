@@ -10,8 +10,8 @@ function App() {
   return (
     <div>
       <FullScreenNav/>
-      <NavBar />
-      <Routes>
+      <NavBar /> 
+       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Agents" element={<Agents />} />
         <Route path="/Projects" element={<Projects />} />

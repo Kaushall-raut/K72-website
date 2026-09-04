@@ -4,9 +4,10 @@ import { createContext, useState } from "react";
 export const NavBarContext = createContext();
 const NavContext = ({ children }) => {
   const [navOpen, setNavOpen] = useState(false);
-  
+  console.log(navOpen, "from context");
+
   return (
-    <NavBarContext value={ [navOpen, setNavOpen] }>{children}</NavBarContext>
+    <NavBarContext value={[navOpen, setNavOpen]}>{children}</NavBarContext>
   );
 };
 
