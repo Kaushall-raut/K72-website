@@ -1,6 +1,7 @@
 const ProjectCard = (props) => {
   return (
-    <div className="w-full h-130  mb-4 flex gap-4 ">
+    <>
+    
       <div className="w-1/2 h-full group relative hover:rounded-4xl overflow-hidden ">
         <img
           className="h-full w-full object-cover transition-all duration-500"
@@ -25,8 +26,8 @@ const ProjectCard = (props) => {
           </h2>
         </div>
       </div>
-     
-    </div>
+     </>
+  
   );
 };
 
