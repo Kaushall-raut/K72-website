@@ -8,7 +8,7 @@ import FullScreenNav from "./components/Common/FullScreenNav";
 
 function App() {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <FullScreenNav/>
       <NavBar /> 
        <Routes>
